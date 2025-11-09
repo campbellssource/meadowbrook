@@ -1,0 +1,25 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.map(page => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+const { slug } = Astro.params;
+const page = await getEntry('pages', slug);
+
+if (!page) {
+  return Astro.redirect('/404');
+}
+
+const { Content } = await page.render();
+---
+
+<Layout title={page.data.title} description={page.data.description}>
+  <Content />
+</Layout>
