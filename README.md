@@ -23,7 +23,7 @@ A simple Astro site with markdown-based content management using PageCMS.
 
 All page content (except the homepage) is stored in markdown files located in `src/content/pages/`.
 
-The site uses PageCMS for content management. The configuration is defined in `pagecms.yml`.
+The site uses PageCMS for content management. The configuration is defined in `pages.yml`.
 
 ## Project Structure
 
@@ -43,7 +43,7 @@ The site uses PageCMS for content management. The configuration is defined in `p
 │           └── [slug].astro  # Dynamic markdown pages
 ├── astro.config.mjs
 ├── package.json
-└── pagecms.yml          # PageCMS configuration
+└── pages.yml            # PageCMS configuration
 ```
 
 ## Features
